@@ -22,6 +22,7 @@ struct CardView: View {
   private var sizeMultiplier: CGFloat {
     return width / designedWidth
   }
+  
   private var content: some View {
     VStack {
       HStack {
