@@ -39,8 +39,8 @@ struct GameBoardView_Preview: PreviewProvider {
   static var previews: some View {
     GameBoardView(
       hand: .init(
-      leftCard: .init(suite: .spades, value: .ace, faceup: true),
-      rightCard: .init(suite: .hearts, value: .king, faceup: true)
+        leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
+      rightCard: .init(suite: .hearts, value: .king, visibility: .faceup)
     ),
       width: 400
     )

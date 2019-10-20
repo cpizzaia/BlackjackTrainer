@@ -33,12 +33,17 @@ struct Card {
     case king = "K"
   }
 
+  enum Visibility {
+    case faceup
+    case facedown
+  }
+
   let suite: Suite
   let value: Value
-  let faceup: Bool
+  let visibility: Visibility
 
   var image: Image {
-    if !faceup { return Image("back_of_card") }
+    if visibility == .facedown { return Image("back_of_card") }
 
     switch (value, suite) {
     case (.two, .clubs):
