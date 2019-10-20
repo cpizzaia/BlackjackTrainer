@@ -13,8 +13,7 @@ struct CardView: View {
   let card: Card
   let width: CGFloat
   var body: some View {
-    content.border(Color.black, width: 5 * sizeMultiplier)
-      .frame(width: width, height: width / 0.714)
+    content.frame(width: width, height: width / 0.714)
   }
 
   // MARK: Private Properties
@@ -24,19 +23,7 @@ struct CardView: View {
   }
 
   private var content: some View {
-    VStack {
-      HStack {
-        Text(card.value.rawValue).font(.myFont(size: 40 * sizeMultiplier)).padding(.init(10 * sizeMultiplier))
-        Spacer()
-      }
-      Spacer()
-      Text(card.suite.rawValue).font(.myFont(size: 30 * sizeMultiplier))
-      Spacer()
-      HStack {
-        Spacer()
-        Text(card.value.rawValue).font(.myFont(size: 40 * sizeMultiplier)).padding(.init(10 * sizeMultiplier))
-      }
-    }
+    card.image.resizable()
   }
 }
 
