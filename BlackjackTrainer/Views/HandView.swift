@@ -22,10 +22,17 @@ struct HandView: View {
     return width / designedWidth
   }
   private var content: some View {
-    HStack {
-      CardView(card: hand.leftCard, width: 100 * sizeMultiplier)
-      Spacer()
-      CardView(card: hand.rightCard, width: 100 * sizeMultiplier)
+    let spacerWidth: CGFloat = 30 * sizeMultiplier
+
+    return VStack(spacing: -100 * sizeMultiplier) {
+      HStack() {
+        Spacer().frame(width: spacerWidth)
+        CardView(card: hand.leftCard, width: 100 * sizeMultiplier)
+      }.zIndex(1)
+      HStack {
+        CardView(card: hand.rightCard, width: 100 * sizeMultiplier)
+        Spacer().frame(width: spacerWidth)
+      }
     }
   }
 }
@@ -37,7 +44,7 @@ struct HandView_Preview: PreviewProvider {
         leftCard: .init(suite: .spades, value: .ace),
         rightCard: .init(suite: .hearts, value: .king)
       ),
-      width: 200
+      width: 400
     )
   }
 }
