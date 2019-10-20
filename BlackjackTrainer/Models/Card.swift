@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct Card {
+struct Card: Equatable {
   enum Suite: String {
     case hearts = "Hearts"
     case spades = "Spades"
@@ -41,6 +41,15 @@ struct Card {
   let suite: Suite
   let value: Value
   let visibility: Visibility
+
+  var equivalentValue: Value {
+    switch value {
+    case .jack, .queen, .king:
+      return .ten
+    default:
+      return value
+    }
+  }
 
   var image: Image {
     if visibility == .facedown { return Image("back_of_card") }

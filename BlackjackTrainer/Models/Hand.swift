@@ -12,6 +12,9 @@ struct Hand {
   enum Action: String {
     case hit = "Hit"
     case stand = "Stand"
+    case split = "Split"
+    case double = "Double"
+    case surrender = "Surrender"
   }
 
   let leftCard: Card
