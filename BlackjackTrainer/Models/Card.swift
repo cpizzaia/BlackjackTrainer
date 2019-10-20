@@ -35,8 +35,11 @@ struct Card {
 
   let suite: Suite
   let value: Value
+  let faceup: Bool
 
   var image: Image {
+    if !faceup { return Image("back_of_card") }
+
     switch (value, suite) {
     case (.two, .clubs):
       return Image("2_of_clubs")

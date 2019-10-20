@@ -41,8 +41,8 @@ struct HandView_Preview: PreviewProvider {
   static var previews: some View {
     HandView(
       hand: .init(
-        leftCard: .init(suite: .spades, value: .ace),
-        rightCard: .init(suite: .hearts, value: .king)
+        leftCard: .init(suite: .spades, value: .ace, faceup: true),
+        rightCard: .init(suite: .hearts, value: .king, faceup: true)
       ),
       width: 400
     )
