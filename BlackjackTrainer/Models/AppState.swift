@@ -16,9 +16,9 @@ class AppState: ObservableObject {
 
   func dealNewHands() {
     guard let drawResult1 = deck.draw() else { return }
-    guard let drawResult2 = deck.draw() else { return }
-    guard let drawResult3 = deck.draw() else { return }
-    guard let drawResult4 = deck.draw() else { return }
+    guard let drawResult2 = drawResult1.deck.draw() else { return }
+    guard let drawResult3 = drawResult2.deck.draw() else { return }
+    guard let drawResult4 = drawResult3.deck.draw() else { return }
 
     playerHand = .init(
       leftCard: drawResult1.card.flip(to: .faceup),

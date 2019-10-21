@@ -13,6 +13,7 @@ struct GameBoardView: View {
   let dealerHand: Hand?
   let width: CGFloat
   let height: CGFloat
+  let hitTapAction: () -> Void
 
   var body: some View {
     content.frame(
@@ -37,8 +38,16 @@ struct GameBoardView: View {
       playerHandView()
 
       HStack(spacing: 50 * sizeMultiplier) {
-        HandActionButtonView(action: .stand, width: 100 * sizeMultiplier)
-        HandActionButtonView(action: .hit, width: 100 * sizeMultiplier)
+        HandActionButtonView(
+          tapAction: {},
+          action: .stand,
+          width: 100 * sizeMultiplier
+        )
+        HandActionButtonView(
+          tapAction: hitTapAction,
+          action: .hit,
+          width: 100 * sizeMultiplier
+        )
       }.padding(.bottom, 20 * sizeMultiplier)
     }.frame(width: width)
   }
@@ -80,7 +89,8 @@ struct GameBoardView_Preview: PreviewProvider {
         rightCard: .init(suit: .hearts, value: .king, visibility: .facedown)
       ),
       width: UIScreen.main.bounds.width,
-      height: UIScreen.main.bounds.height - topPadding
+      height: UIScreen.main.bounds.height - topPadding,
+      hitTapAction: {}
     ).padding(.top, topPadding)
   }
 }

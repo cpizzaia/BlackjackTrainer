@@ -18,7 +18,8 @@ struct AppView: View {
       playerHand: state.playerHand,
       dealerHand: state.dealerHand,
       width: UIScreen.main.bounds.width,
-      height: UIScreen.main.bounds.height - topPadding
+      height: UIScreen.main.bounds.height - topPadding,
+      hitTapAction: state.dealNewHands
     ).padding(.top, topPadding)
   }
 }

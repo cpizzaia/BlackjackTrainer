@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HandActionButtonView: View {
   // MARK: Public Properties
+  let tapAction: () -> Void
   let action: Hand.Action
   let width: CGFloat
 
@@ -29,7 +30,7 @@ struct HandActionButtonView: View {
   private var content: some View {
     Group {
       Text(action.rawValue.uppercased()).font(.myFont(size: 20 * sizeMultiplier)).foregroundColor(.white)
-    }
+    }.onTapGesture(perform: tapAction)
   }
 }
 
@@ -37,7 +38,11 @@ struct HandActionButtonView_Preview: PreviewProvider {
   static var previews: some View {
     GeometryReader(content: { geometry in
       VStack {
-        HandActionButtonView(action: .hit, width: 200)
+        HandActionButtonView(
+          tapAction: {},
+          action: .hit,
+          width: 200
+        )
       }
     }).background(Color.black).edgesIgnoringSafeArea(.all)
   }
