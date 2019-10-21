@@ -175,4 +175,8 @@ struct Card: Equatable {
       return Image("ace_of_spades")
     }
   }
+
+  func flip(to visbility: Visibility) -> Card {
+    return .init(suit: suit, value: value, visibility: visbility)
+  }
 }

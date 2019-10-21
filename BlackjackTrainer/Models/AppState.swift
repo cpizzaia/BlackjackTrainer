@@ -12,9 +12,24 @@ import SwiftUI
 class AppState: ObservableObject {
   @Published var dealerHand: Hand?
   @Published var playerHand: Hand?
-  @Published var deck = Deck.standardDeck
+  @Published var deck = Deck.standardDeck.shuffled()
 
   func dealNewHands() {
+    guard let drawResult1 = deck.draw() else { return }
+    guard let drawResult2 = deck.draw() else { return }
+    guard let drawResult3 = deck.draw() else { return }
+    guard let drawResult4 = deck.draw() else { return }
 
+    playerHand = .init(
+      leftCard: drawResult1.card.flip(to: .faceup),
+      rightCard: drawResult2.card.flip(to: .faceup)
+    )
+
+    dealerHand = .init(
+      leftCard: drawResult3.card.flip(to: .faceup),
+      rightCard: drawResult4.card.flip(to: .facedown)
+    )
+
+    deck = drawResult4.deck
   }
 }
