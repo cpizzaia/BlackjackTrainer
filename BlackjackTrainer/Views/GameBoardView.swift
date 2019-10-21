@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct GameBoardView: View {
-  let hand: Hand
-  let dealerHand: Hand
+  let playerHand: Hand?
+  let dealerHand: Hand?
   let width: CGFloat
+  let height: CGFloat
 
   var body: some View {
-    content.frame(width: width, height: width * 2).background(Image("table_background"))
+    content.frame(
+      width: width,
+      height: height
+    ).background(Image("table_background"))
   }
 
   // MARK: Private Properties
@@ -25,22 +29,49 @@ struct GameBoardView: View {
 
   private var content: some View {
     VStack {
-      DealerHandView(hand: dealerHand, width: width - 200 * sizeMultiplier)
+      dealerHandView()
+
       Spacer()
       Spacer()
-      HandView(hand: hand, width: width - 200 * sizeMultiplier).padding(.bottom, 40 * sizeMultiplier)
+
+      playerHandView()
+
       HStack(spacing: 50 * sizeMultiplier) {
         HandActionButtonView(action: .stand, width: 100 * sizeMultiplier)
         HandActionButtonView(action: .hit, width: 100 * sizeMultiplier)
       }.padding(.bottom, 20 * sizeMultiplier)
     }.frame(width: width)
   }
+
+  private func dealerHandView() -> AnyView {
+    if let dealerHand = dealerHand {
+      return AnyView(DealerHandView(
+        hand: dealerHand,
+        width: width - 200 * sizeMultiplier
+      ))
+    }
+
+    return AnyView(EmptyView())
+  }
+
+  private func playerHandView() -> AnyView {
+    if let playerHand = playerHand {
+      return AnyView(HandView(
+        hand: playerHand,
+        width: width - 200 * sizeMultiplier
+      ).padding(.bottom, 40 * sizeMultiplier))
+    }
+
+    return AnyView(EmptyView())
+  }
 }
 
 struct GameBoardView_Preview: PreviewProvider {
   static var previews: some View {
-    GameBoardView(
-      hand: .init(
+    let topPadding = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.safeAreaInsets.top ?? 0
+
+    return GameBoardView(
+      playerHand: .init(
         leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
         rightCard: .init(suit: .hearts, value: .king, visibility: .faceup)
       ),
@@ -48,7 +79,8 @@ struct GameBoardView_Preview: PreviewProvider {
         leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
         rightCard: .init(suit: .hearts, value: .king, visibility: .facedown)
       ),
-      width: 400
-    )
+      width: UIScreen.main.bounds.width,
+      height: UIScreen.main.bounds.height - topPadding
+    ).padding(.top, topPadding)
   }
 }

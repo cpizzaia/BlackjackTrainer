@@ -20,17 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
     // Create the SwiftUI view that provides the window contents.
-    let contentView = GameBoardView(
-      hand: .init(
-        leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
-        rightCard: .init(suit: .hearts, value: .king, visibility: .faceup)
-      ),
-      dealerHand: .init(
-        leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
-        rightCard: .init(suit: .hearts, value: .king, visibility: .facedown)
-      ),
-      width: 400
-    )
+    let contentView = AppView()
 
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {

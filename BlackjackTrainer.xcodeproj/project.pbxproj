@@ -11,6 +11,7 @@
 		AC4D0A0C235D37D000167A4F /* DealerHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D0A0B235D37D000167A4F /* DealerHandView.swift */; };
 		AC4D0A0E235D543200167A4F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D0A0D235D543200167A4F /* AppState.swift */; };
 		AC4D0A10235D54E200167A4F /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D0A0F235D54E200167A4F /* Deck.swift */; };
+		AC4D0A12235D5B6E00167A4F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D0A11235D5B6E00167A4F /* AppView.swift */; };
 		ACFBF16B235293D000686E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF16A235293D000686E72 /* AppDelegate.swift */; };
 		ACFBF16D235293D000686E72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF16C235293D000686E72 /* SceneDelegate.swift */; };
 		ACFBF171235293D100686E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF170235293D100686E72 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		AC4D0A0B235D37D000167A4F /* DealerHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerHandView.swift; sourceTree = "<group>"; };
 		AC4D0A0D235D543200167A4F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		AC4D0A0F235D54E200167A4F /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		AC4D0A11235D5B6E00167A4F /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		ACFBF167235293D000686E72 /* BlackjackTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackjackTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF16A235293D000686E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFBF16C235293D000686E72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				ACFBF1932352A9CA00686E72 /* HandActionButtonView.swift */,
 				ACFBF1952352AE3400686E72 /* HandView.swift */,
 				AC4D0A0B235D37D000167A4F /* DealerHandView.swift */,
+				AC4D0A11235D5B6E00167A4F /* AppView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				ACFBF1902352A81900686E72 /* GameBoardView.swift in Sources */,
 				ACFBF18A2352A37F00686E72 /* FontExtensions.swift in Sources */,
 				AC4D0A10235D54E200167A4F /* Deck.swift in Sources */,
+				AC4D0A12235D5B6E00167A4F /* AppView.swift in Sources */,
 				ACFBF18723529B0900686E72 /* CardView.swift in Sources */,
 				ACFBF1942352A9CA00686E72 /* HandActionButtonView.swift in Sources */,
 				AC304429235BFC3F00EA0B8C /* HandAnalyzer.swift in Sources */,
