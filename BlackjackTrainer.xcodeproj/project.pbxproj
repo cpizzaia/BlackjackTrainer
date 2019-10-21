@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AC304429235BFC3F00EA0B8C /* HandAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC304428235BFC3F00EA0B8C /* HandAnalyzer.swift */; };
+		AC4D0A0C235D37D000167A4F /* DealerHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D0A0B235D37D000167A4F /* DealerHand.swift */; };
 		ACFBF16B235293D000686E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF16A235293D000686E72 /* AppDelegate.swift */; };
 		ACFBF16D235293D000686E72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF16C235293D000686E72 /* SceneDelegate.swift */; };
-		ACFBF16F235293D000686E72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF16E235293D000686E72 /* ContentView.swift */; };
 		ACFBF171235293D100686E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF170235293D100686E72 /* Assets.xcassets */; };
 		ACFBF174235293D100686E72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF173235293D100686E72 /* Preview Assets.xcassets */; };
 		ACFBF177235293D100686E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF175235293D100686E72 /* LaunchScreen.storyboard */; };
@@ -25,10 +25,10 @@
 
 /* Begin PBXFileReference section */
 		AC304428235BFC3F00EA0B8C /* HandAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandAnalyzer.swift; sourceTree = "<group>"; };
+		AC4D0A0B235D37D000167A4F /* DealerHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerHand.swift; sourceTree = "<group>"; };
 		ACFBF167235293D000686E72 /* BlackjackTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackjackTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF16A235293D000686E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFBF16C235293D000686E72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACFBF16E235293D000686E72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACFBF170235293D100686E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACFBF173235293D100686E72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACFBF176235293D100686E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,11 +114,11 @@
 		ACFBF17F235293FB00686E72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ACFBF16E235293D000686E72 /* ContentView.swift */,
 				ACFBF18623529B0900686E72 /* CardView.swift */,
 				ACFBF18F2352A81900686E72 /* GameBoardView.swift */,
 				ACFBF1932352A9CA00686E72 /* HandActionButtonView.swift */,
 				ACFBF1952352AE3400686E72 /* HandView.swift */,
+				AC4D0A0B235D37D000167A4F /* DealerHand.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,13 +203,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACFBF1922352A8DF00686E72 /* Hand.swift in Sources */,
+				AC4D0A0C235D37D000167A4F /* DealerHand.swift in Sources */,
 				ACFBF16B235293D000686E72 /* AppDelegate.swift in Sources */,
 				ACFBF16D235293D000686E72 /* SceneDelegate.swift in Sources */,
 				ACFBF1962352AE3500686E72 /* HandView.swift in Sources */,
 				ACFBF18E2352A68C00686E72 /* Card.swift in Sources */,
 				ACFBF1902352A81900686E72 /* GameBoardView.swift in Sources */,
 				ACFBF18A2352A37F00686E72 /* FontExtensions.swift in Sources */,
-				ACFBF16F235293D000686E72 /* ContentView.swift in Sources */,
 				ACFBF18723529B0900686E72 /* CardView.swift in Sources */,
 				ACFBF1942352A9CA00686E72 /* HandActionButtonView.swift in Sources */,
 				AC304429235BFC3F00EA0B8C /* HandAnalyzer.swift in Sources */,
@@ -350,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BlackjackTrainer/Preview Content\"";
+				DEVELOPMENT_TEAM = W6Y8FXYPMN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BlackjackTrainer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BlackjackTrainer/Preview Content\"";
+				DEVELOPMENT_TEAM = W6Y8FXYPMN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BlackjackTrainer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -28,7 +28,7 @@ struct HandActionButtonView: View {
 
   private var content: some View {
     Group {
-      Text(action.rawValue).font(.myFont(size: 20 * sizeMultiplier)).foregroundColor(.white)
+      Text(action.rawValue.uppercased()).font(.myFont(size: 20 * sizeMultiplier)).foregroundColor(.white)
     }
   }
 }

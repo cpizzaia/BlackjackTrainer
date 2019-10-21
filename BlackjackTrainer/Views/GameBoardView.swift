@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GameBoardView: View {
   let hand: Hand
+  let dealerHand: Hand
   let width: CGFloat
 
   var body: some View {
@@ -24,9 +25,10 @@ struct GameBoardView: View {
 
   private var content: some View {
     VStack {
+      DealerHand(hand: dealerHand, width: width - 200 * sizeMultiplier)
       Spacer()
       Spacer()
-      HandView(hand: hand, width: width - 130 * sizeMultiplier).padding(.bottom, 40 * sizeMultiplier)
+      HandView(hand: hand, width: width - 200 * sizeMultiplier).padding(.bottom, 40 * sizeMultiplier)
       HStack(spacing: 50 * sizeMultiplier) {
         HandActionButtonView(action: .stand, width: 100 * sizeMultiplier)
         HandActionButtonView(action: .hit, width: 100 * sizeMultiplier)
@@ -40,8 +42,12 @@ struct GameBoardView_Preview: PreviewProvider {
     GameBoardView(
       hand: .init(
         leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
-      rightCard: .init(suite: .hearts, value: .king, visibility: .faceup)
-    ),
+        rightCard: .init(suite: .hearts, value: .king, visibility: .faceup)
+      ),
+      dealerHand: .init(
+        leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
+        rightCard: .init(suite: .hearts, value: .king, visibility: .facedown)
+      ),
       width: 400
     )
   }
