@@ -17,7 +17,7 @@ struct HandActionButtonView: View {
     content.frame(
       width: width,
       height: width / 2
-    ).border(Color.black, width: 3 * sizeMultiplier)
+    ).border(Color.white, width: 3 * sizeMultiplier)
   }
 
   // MARK: Private Properties
@@ -28,13 +28,17 @@ struct HandActionButtonView: View {
 
   private var content: some View {
     Group {
-      Text(action.rawValue).font(.myFont(size: 20 * sizeMultiplier))
+      Text(action.rawValue).font(.myFont(size: 20 * sizeMultiplier)).foregroundColor(.white)
     }
   }
 }
 
 struct HandActionButtonView_Preview: PreviewProvider {
   static var previews: some View {
-    HandActionButtonView(action: .hit, width: 200)
+    GeometryReader(content: { geometry in
+      VStack {
+        HandActionButtonView(action: .hit, width: 200)
+      }
+    }).background(Color.black).edgesIgnoringSafeArea(.all)
   }
 }

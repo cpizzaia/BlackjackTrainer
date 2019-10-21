@@ -13,7 +13,7 @@ struct HandView: View {
   let hand: Hand
   let width: CGFloat
   var body: some View {
-    content.frame(width: width, height: width / 2)
+    content.frame(width: width)
   }
 
   // MARK: Private Properties
@@ -22,18 +22,17 @@ struct HandView: View {
     return width / designedWidth
   }
   private var content: some View {
-    let spacerWidth: CGFloat = 30 * sizeMultiplier
-
-    return VStack(spacing: -100 * sizeMultiplier) {
+    let cardWidth = 140 * sizeMultiplier
+    return VStack(spacing: -140 * sizeMultiplier) {
       HStack() {
-        Spacer().frame(width: spacerWidth)
-        CardView(card: hand.leftCard, width: 100 * sizeMultiplier)
-      }.zIndex(1)
+        Spacer()
+        CardView(card: hand.leftCard, width: cardWidth)
+      }.zIndex(1).frame(width: width)
       HStack {
-        CardView(card: hand.rightCard, width: 100 * sizeMultiplier)
-        Spacer().frame(width: spacerWidth)
-      }
-    }
+        CardView(card: hand.rightCard, width: cardWidth)
+        Spacer()
+      }.frame(width: width)
+    }.frame(width: width)
   }
 }
 

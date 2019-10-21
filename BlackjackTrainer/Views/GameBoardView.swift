@@ -13,7 +13,7 @@ struct GameBoardView: View {
   let width: CGFloat
 
   var body: some View {
-    content.frame(width: width, height: width * 2)
+    content.frame(width: width, height: width * 2).background(Image("table_background"))
   }
 
   // MARK: Private Properties
@@ -26,12 +26,12 @@ struct GameBoardView: View {
     VStack {
       Spacer()
       Spacer()
-      HandView(hand: hand, width: width - 100 * sizeMultiplier).padding(.bottom, 100 * sizeMultiplier)
+      HandView(hand: hand, width: width - 130 * sizeMultiplier).padding(.bottom, 40 * sizeMultiplier)
       HStack(spacing: 50 * sizeMultiplier) {
         HandActionButtonView(action: .stand, width: 100 * sizeMultiplier)
         HandActionButtonView(action: .hit, width: 100 * sizeMultiplier)
       }.padding(.bottom, 20 * sizeMultiplier)
-    }
+    }.frame(width: width)
   }
 }
 
