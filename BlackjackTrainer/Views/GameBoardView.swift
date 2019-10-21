@@ -25,7 +25,7 @@ struct GameBoardView: View {
 
   private var content: some View {
     VStack {
-      DealerHand(hand: dealerHand, width: width - 200 * sizeMultiplier)
+      DealerHandView(hand: dealerHand, width: width - 200 * sizeMultiplier)
       Spacer()
       Spacer()
       HandView(hand: hand, width: width - 200 * sizeMultiplier).padding(.bottom, 40 * sizeMultiplier)
@@ -41,12 +41,12 @@ struct GameBoardView_Preview: PreviewProvider {
   static var previews: some View {
     GameBoardView(
       hand: .init(
-        leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
-        rightCard: .init(suite: .hearts, value: .king, visibility: .faceup)
+        leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
+        rightCard: .init(suit: .hearts, value: .king, visibility: .faceup)
       ),
       dealerHand: .init(
-        leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
-        rightCard: .init(suite: .hearts, value: .king, visibility: .facedown)
+        leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
+        rightCard: .init(suit: .hearts, value: .king, visibility: .facedown)
       ),
       width: 400
     )

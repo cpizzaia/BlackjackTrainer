@@ -1,5 +1,5 @@
 //
-//  DealerHand.swift
+//  DealerHandView.swift
 //  BlackjackTrainer
 //
 //  Created by Cody Pizzaia on 10/20/19.
@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct DealerHand: View {
+struct DealerHandView: View {
   let hand: Hand
   let width: CGFloat
 
@@ -33,17 +33,17 @@ struct DealerHand: View {
   }
 }
 
-struct DealerHand_Preview: PreviewProvider {
+struct DealerHandView_Preview: PreviewProvider {
   static var previews: some View {
-    DealerHand(
+    DealerHandView(
       hand: .init(
         leftCard: .init(
-          suite: .clubs,
+          suit: .clubs,
           value: .ace,
           visibility: .faceup
         ),
         rightCard: .init(
-          suite: .spades,
+          suit: .spades,
           value: .king,
           visibility: .facedown
         )

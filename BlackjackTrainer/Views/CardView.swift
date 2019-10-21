@@ -30,7 +30,7 @@ struct CardView: View {
 struct CardView_Preview: PreviewProvider {
   static var previews: some View {
     return CardView(
-      card: .init(suite: .spades, value: .ace, visibility: .faceup),
+      card: .init(suit: .spades, value: .ace, visibility: .faceup),
       width: 300
     )
   }

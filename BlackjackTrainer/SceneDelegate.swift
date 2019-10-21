@@ -22,12 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Create the SwiftUI view that provides the window contents.
     let contentView = GameBoardView(
       hand: .init(
-        leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
-        rightCard: .init(suite: .hearts, value: .king, visibility: .faceup)
+        leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
+        rightCard: .init(suit: .hearts, value: .king, visibility: .faceup)
       ),
       dealerHand: .init(
-        leftCard: .init(suite: .spades, value: .ace, visibility: .faceup),
-        rightCard: .init(suite: .hearts, value: .king, visibility: .facedown)
+        leftCard: .init(suit: .spades, value: .ace, visibility: .faceup),
+        rightCard: .init(suit: .hearts, value: .king, visibility: .facedown)
       ),
       width: 400
     )

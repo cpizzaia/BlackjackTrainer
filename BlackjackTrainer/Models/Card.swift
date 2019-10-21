@@ -10,14 +10,14 @@ import Foundation
 import SwiftUI
 
 struct Card: Equatable {
-  enum Suite: String {
+  enum Suit: String, CaseIterable {
     case hearts
     case spades
     case clubs
     case diamonds
   }
 
-  enum Value: String {
+  enum Value: String, CaseIterable {
     case ace
     case two
     case three
@@ -38,7 +38,7 @@ struct Card: Equatable {
     case facedown
   }
 
-  let suite: Suite
+  let suit: Suit
   let value: Value
   let visibility: Visibility
   var score: Int? {
@@ -68,7 +68,7 @@ struct Card: Equatable {
   var image: Image {
     if visibility == .facedown { return Image("back_of_card") }
 
-    switch (value, suite) {
+    switch (value, suit) {
     case (.two, .clubs):
       return Image("2_of_clubs")
     case (.two, .diamonds):
